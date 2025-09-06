@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Courier+Prime:wght@400;700&family=Anonymous+Pro:wght@400;700&family=Ubuntu+Mono:wght@400;700&display=swap");
+
+/* CSS Custom Properties per colori */
+:root {
+  --color-primary: #0ea5e9;
+  --color-secondary: #6366f1;
+  --color-dark: #0f172a;
+  --color-light: #f8fafc;
+  --color-grid: rgba(15, 23, 42, 0.15);
+  --color-border: rgba(248, 250, 252, 0.4);
+  --color-primary-80: rgba(14, 165, 233, 0.8);
+  --color-secondary-80: rgba(99, 102, 241, 0.8);
+}
+
+/* Enhanced coding font styles */
+body {
+  font-feature-settings: normal;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+  text-rendering: optimizeSpeed;
+}
+
+/* Hacker-style text effects */
+.hacker-text {
+  text-shadow: 0 0 5px currentColor;
+  font-family: "Courier Prime", "Anonymous Pro", "Ubuntu Mono", "Courier New", "Monaco", monospace;
+  letter-spacing: 0.1em;
+}
+
+/* Terminal glow effect */
+.terminal-glow {
+  text-shadow: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 15px currentColor;
+}
+
+/* Terminal-like text styling */
+.terminal-text {
+  font-family: "Courier Prime", "Anonymous Pro", "Ubuntu Mono", "Courier New", "Monaco", monospace;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* Code block styling */
+pre, code {
+  font-family: "Courier Prime", "Anonymous Pro", "Ubuntu Mono", "Courier New", "Monaco", monospace;
+  font-feature-settings: normal;
+  letter-spacing: 0.05em;
+}
+
+.bg-grid {
+  background-image: linear-gradient(
+      to right,
+      var(--color-grid) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, var(--color-grid) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.bg-animated {
+  background: linear-gradient(-45deg, var(--color-primary), var(--color-secondary), var(--color-dark), #1e293b);
+  background-size: 400% 400%;
+}
+
+.typing-cursor::after {
+  content: "|";
+}
+
+.code-line {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0;
+  width: 0;
+}
+
+.icon-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+  padding: 20px 0;
+}
+
+.icon {
+  transition: all 0.3s ease;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.icon:hover {
+  transform: translateY(-5px);
+}
+
+.animate-float {
+  /* Animation will be handled by GSAP */
+}
+
+/* Animation delay classes - now handled by GSAP */
+
+.animate-gradient-x {
+  /* Animation will be handled by GSAP */
+}
+
+/* Progress Bar Styles */
+.progress-bar {
+  width: 0%;
+  will-change: width;
+  transform: translateZ(0); /* Forza l'accelerazione hardware */
+  background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+}
+
+/* Infinite Animations */
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes rotate-infinite {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    filter: drop-shadow(0 0 5px var(--color-primary)) drop-shadow(0 0 10px var(--color-primary));
+    transform: scale(1);
+  }
+  50% { 
+    filter: drop-shadow(0 0 8px var(--color-primary)) drop-shadow(0 0 15px var(--color-primary));
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float-particles {
+  0% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-10px) translateX(5px); }
+  50% { transform: translateY(-5px) translateX(-5px); }
+  75% { transform: translateY(-15px) translateX(3px); }
+  100% { transform: translateY(0px) translateX(0px); }
+}
+
+@keyframes text-shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes border-dance {
+  0%, 100% { border-color: var(--color-primary); }
+  25% { border-color: var(--color-secondary); }
+  50% { border-color: var(--color-light); }
+  75% { border-color: var(--color-primary); }
+}
+
+/* Animation Classes */
+.sparkle-effect {
+  position: relative;
+}
+
+.sparkle-effect::before,
+.sparkle-effect::after {
+  content: '✦';
+  position: absolute;
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  animation: sparkle 3s infinite;
+  pointer-events: none;
+}
+
+.sparkle-effect::before {
+  top: -5px;
+  left: -5px;
+  animation-delay: 0s;
+}
+
+.sparkle-effect::after {
+  bottom: -5px;
+  right: -5px;
+  animation-delay: 1.5s;
+}
+
+.rotate-infinite {
+  animation: rotate-infinite 20s linear infinite;
+  will-change: transform;
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+  will-change: filter, transform;
+}
+
+/* Improved hover effects for icons */
+.icon img {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, filter;
+}
+
+.icon:hover img {
+  transform: translateY(-5px) scale(1.1);
+  filter: drop-shadow(0 5px 15px rgba(14, 165, 233, 0.3));
+}
+
+.float-particles {
+  animation: float-particles 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.text-shimmer {
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-primary),
+    var(--color-secondary),
+    transparent
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-shimmer 3s ease-in-out infinite;
+  will-change: background-position;
+}
+
+.border-dance {
+  border: 2px solid var(--color-primary);
+  animation: border-dance 4s ease-in-out infinite;
+  will-change: border-color;
+}
+
+/* Floating Elements */
+.floating-element {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.4;
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  animation: float-particles 8s ease-in-out infinite;
+  z-index: 1;
+  will-change: transform;
+}
+
+.floating-element:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+.floating-element:nth-child(2) { top: 20%; right: 15%; animation-delay: 2s; }
+.floating-element:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 4s; }
+.floating-element:nth-child(4) { bottom: 15%; right: 10%; animation-delay: 6s; }
+
+/* Breathing Effect */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: currentColor; }
+}
+
+.breathe {
+  animation: breathe 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+.typing-container {
+  position: relative;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: currentColor;
+  animation: blink-caret 1s step-end infinite;
+  margin-left: 1px;
+}
+
+/* Consistent styling for floating code elements across all devices */
+#developer-code,
+#copyright-code {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  white-space: pre;
+  font-family: "Courier Prime", "Anonymous Pro", "Ubuntu Mono", "Courier New", "Monaco", monospace;
+}

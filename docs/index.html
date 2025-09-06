@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Antonio Fuscaldo - Front-end Developer" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Antonio Fuscaldo" />
+    <meta
+      property="og:title"
+      content="Antonio Fuscaldo | Front-end Developer"
+    />
+    <meta property="og:description" content="Front-end Developer." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://antoniofuscaldo.github.io/" />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Antonio Fuscaldo | Front-end Developer"
+    />
+    <meta name="twitter:description" content="Front-end Developer." />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Antonio Fuscaldo | Front-end Developer</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Draggable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/EaselPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/GSDevTools.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/InertiaPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathHelper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MorphSVGPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Observer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Physics2DPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/PhysicsPropsPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/PixiPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrambleTextPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <!-- ScrollSmoother requires ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
+
+    <!-- RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/EasePack.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomEase.min.js"></script>
+    <!-- CustomBounce requires CustomEase -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomBounce.min.js"></script>
+    <!-- CustomWiggle requires CustomEase -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomWiggle.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body
+    class="bg-dark text-light font-mono min-h-screen flex flex-col items-center justify-center p-4 overflow-hidden"
+  >
+    <!-- Background Elements -->
+    <div class="fixed inset-0 bg-grid opacity-20 z-0"></div>
+    <div class="fixed inset-0 bg-animated opacity-30 z-0"></div>
+
+    <!-- Floating Code Elements -->
+    <div class="absolute top-10 left-10 opacity-60 block z-20">
+      <pre
+        id="developer-code"
+        class="text-xs text-primary typing-container font-mono"
+      ></pre>
+    </div>
+
+    <div
+      class="absolute bottom-2 right-2 md:bottom-10 md:right-10 opacity-60 block z-20 max-w-[calc(100vw-1rem)]"
+    >
+      <pre
+        id="copyright-code"
+        class="text-xs text-secondary typing-container font-mono overflow-hidden text-ellipsis whitespace-nowrap"
+      ></pre>
+    </div>
+
+    <!-- Floating Particles -->
+    <div class="floating-element floating-particle">⚡</div>
+    <div class="floating-element floating-particle">✦</div>
+    <div class="floating-element floating-particle">◆</div>
+    <div class="floating-element floating-particle">●</div>
+
+    <!-- Main Content -->
+    <main
+      class="container max-w-4xl mx-auto z-10 flex flex-col items-center justify-center gap-8 py-12 breathe-container"
+    >
+      <!-- Status -->
+      <div class="w-full max-w-lg">
+        <div class="flex items-center gap-3 mb-2">
+          <div
+            class="h-3 w-3 bg-primary rounded-full status-indicator"
+            role="status"
+            aria-label="Indicatore di stato: sito in costruzione"
+          ></div>
+          <h1 class="text-2xl font-bold code-line terminal-text">
+            Build in Progress...
+          </h1>
+        </div>
+
+        <!-- Progress Bar -->
+        <div
+          class="w-full bg-dark border border-light/40 rounded-full h-6 mb-6 overflow-hidden border-dance"
+          role="progressbar"
+          aria-label="Progresso sviluppo sito web"
+          aria-valuenow="0"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div
+            id="progress-bar"
+            class="bg-gradient-to-r from-primary to-secondary h-full rounded-full progress-bar pulse-glow"
+          >
+            <div class="flex h-full items-center justify-end pr-2">
+              <span
+                id="progress-text"
+                class="text-xs font-semibold"
+                aria-live="polite"
+                >0%</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coming Soon Message -->
+      <div class="text-center mb-8">
+        <p
+          class="text-xl md:text-2xl font-bold uppercase tracking-widest bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text animate-gradient-x terminal-text pulse-element"
+        >
+          Coming Soon
+        </p>
+      </div>
+
+      <!-- Tech Stack Icons -->
+
+      <div class="mt-8 py-6" role="region" aria-label="Tecnologie utilizzate">
+        <div class="icon-grid max-w-md mx-auto">
+          <div class="icon sparkle-effect">
+            <img
+              src="icons/Astro_light.svg"
+              alt="Astro - Framework web moderno"
+              class="h-10 w-10 md:h-12 md:w-12 animate-float icon rotate-element"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="icon">
+            <img
+              src="icons/html5.svg"
+              alt="HTML5 - Linguaggio di markup"
+              class="h-10 w-10 md:h-12 md:w-12 animate-float icon wave-element"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="icon sparkle-effect">
+            <img
+              src="icons/css_old.svg"
+              alt="CSS - Fogli di stile"
+              class="h-10 w-10 md:h-12 md:w-12 animate-float icon breathe"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="icon">
+            <img
+              src="icons/javascript.svg"
+              alt="JavaScript - Linguaggio di programmazione"
+              class="h-10 w-10 md:h-12 md:w-12 animate-float icon wave-element"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="icon sparkle-effect">
+            <img
+              src="icons/typescript.svg"
+              alt="TypeScript - JavaScript tipizzato"
+              class="h-10 w-10 md:h-12 md:w-12 animate-float icon rotate-element"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="icon">
+            <img
+              src="icons/tailwindcss.svg"
+              alt="Tailwind CSS - Framework CSS utility-first"
+              class="h-10 w-10 md:h-12 md:w-12 animate-float icon breathe"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      // use a script tag or an external JS file
+      document.addEventListener("DOMContentLoaded", (event) => {
+        gsap.registerPlugin(
+          Draggable,
+          DrawSVGPlugin,
+          EaselPlugin,
+          Flip,
+          GSDevTools,
+          InertiaPlugin,
+          MotionPathHelper,
+          MotionPathPlugin,
+          MorphSVGPlugin,
+          Observer,
+          Physics2DPlugin,
+          PhysicsPropsPlugin,
+          PixiPlugin,
+          ScrambleTextPlugin,
+          ScrollTrigger,
+          ScrollSmoother,
+          ScrollToPlugin,
+          SplitText,
+          TextPlugin,
+          RoughEase,
+          ExpoScaleEase,
+          SlowMo,
+          CustomEase,
+          CustomBounce,
+          CustomWiggle
+        );
+        // gsap code here!
+      });
+    </script>
+  </body>
+</html>
