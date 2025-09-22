@@ -87,11 +87,11 @@ code {
 
 .icon-grid {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: center;
   align-items: center;
-  overflow-x: auto;
+  overflow-x: visible;
   padding: 20px 0;
 }
 
@@ -105,15 +105,7 @@ code {
   transform: translateY(-5px);
 }
 
-.animate-float {
-  /* Animation will be handled by GSAP */
-}
-
 /* Animation delay classes - now handled by GSAP */
-
-.animate-gradient-x {
-  /* Animation will be handled by GSAP */
-}
 
 /* Progress Bar Styles */
 .progress-bar {
@@ -269,8 +261,8 @@ code {
     transparent
   );
   background-size: 200% 100%;
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: text-shimmer 3s ease-in-out infinite;
   will-change: background-position;

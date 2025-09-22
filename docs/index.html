@@ -88,10 +88,10 @@
     </div>
 
     <!-- Floating Particles -->
-    <div class="floating-element floating-particle">⚡</div>
-    <div class="floating-element floating-particle">✦</div>
-    <div class="floating-element floating-particle">◆</div>
-    <div class="floating-element floating-particle">●</div>
+    <div class="floating-element floating-particle" aria-hidden="true">⚡</div>
+    <div class="floating-element floating-particle" aria-hidden="true">✦</div>
+    <div class="floating-element floating-particle" aria-hidden="true">◆</div>
+    <div class="floating-element floating-particle" aria-hidden="true">●</div>
 
     <!-- Main Content -->
     <main
@@ -215,37 +215,7 @@
       </div>
     </main>
     <script>
-      // use a script tag or an external JS file
-      document.addEventListener("DOMContentLoaded", (event) => {
-        gsap.registerPlugin(
-          Draggable,
-          DrawSVGPlugin,
-          EaselPlugin,
-          Flip,
-          GSDevTools,
-          InertiaPlugin,
-          MotionPathHelper,
-          MotionPathPlugin,
-          MorphSVGPlugin,
-          Observer,
-          Physics2DPlugin,
-          PhysicsPropsPlugin,
-          PixiPlugin,
-          ScrambleTextPlugin,
-          ScrollTrigger,
-          ScrollSmoother,
-          ScrollToPlugin,
-          SplitText,
-          TextPlugin,
-          RoughEase,
-          ExpoScaleEase,
-          SlowMo,
-          CustomEase,
-          CustomBounce,
-          CustomWiggle
-        );
-        // gsap code here!
-      });
+      // Tutto il codice GSAP e la registrazione dei plugin sono ora gestiti in script.js
     </script>
   </body>
 </html>
