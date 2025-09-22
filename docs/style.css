@@ -23,29 +23,31 @@ body {
 /* Hacker-style text effects */
 .hacker-text {
   text-shadow: 0 0 5px currentColor;
-  font-family: "Courier Prime", "Anonymous Pro", "Ubuntu Mono", "Courier New", "Monaco", monospace;
+  font-family: "Courier Prime", "Anonymous Pro", "Ubuntu Mono", "Courier New",
+    "Monaco", monospace;
   letter-spacing: 0.1em;
 }
 
 /* Terminal glow effect */
 .terminal-glow {
-  text-shadow: 
-    0 0 5px currentColor,
-    0 0 10px currentColor,
+  text-shadow: 0 0 5px currentColor, 0 0 10px currentColor,
     0 0 15px currentColor;
 }
 
 /* Terminal-like text styling */
 .terminal-text {
-  font-family: "Courier Prime", "Anonymous Pro", "Ubuntu Mono", "Courier New", "Monaco", monospace;
+  font-family: "Courier Prime", "Anonymous Pro", "Ubuntu Mono", "Courier New",
+    "Monaco", monospace;
   letter-spacing: 0.05em;
   line-height: 1.5;
   font-weight: 400;
 }
 
 /* Code block styling */
-pre, code {
-  font-family: "Courier Prime", "Anonymous Pro", "Ubuntu Mono", "Courier New", "Monaco", monospace;
+pre,
+code {
+  font-family: "Courier Prime", "Anonymous Pro", "Ubuntu Mono", "Courier New",
+    "Monaco", monospace;
   font-feature-settings: normal;
   letter-spacing: 0.05em;
 }
@@ -61,7 +63,13 @@ pre, code {
 }
 
 .bg-animated {
-  background: linear-gradient(-45deg, var(--color-primary), var(--color-secondary), var(--color-dark), #1e293b);
+  background: linear-gradient(
+    -45deg,
+    var(--color-primary),
+    var(--color-secondary),
+    var(--color-dark),
+    #1e293b
+  );
   background-size: 400% 400%;
 }
 
@@ -112,49 +120,90 @@ pre, code {
   width: 0%;
   will-change: width;
   transform: translateZ(0); /* Forza l'accelerazione hardware */
-  background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(
+    to right,
+    var(--color-primary),
+    var(--color-secondary)
+  );
 }
 
 /* Infinite Animations */
 @keyframes sparkle {
-  0%, 100% { opacity: 0; transform: scale(0); }
-  50% { opacity: 1; transform: scale(1); }
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes rotate-infinite {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { 
-    filter: drop-shadow(0 0 5px var(--color-primary)) drop-shadow(0 0 10px var(--color-primary));
+  0%,
+  100% {
+    filter: drop-shadow(0 0 5px var(--color-primary))
+      drop-shadow(0 0 10px var(--color-primary));
     transform: scale(1);
   }
-  50% { 
-    filter: drop-shadow(0 0 8px var(--color-primary)) drop-shadow(0 0 15px var(--color-primary));
+  50% {
+    filter: drop-shadow(0 0 8px var(--color-primary))
+      drop-shadow(0 0 15px var(--color-primary));
     transform: scale(1.05);
   }
 }
 
 @keyframes float-particles {
-  0% { transform: translateY(0px) translateX(0px); }
-  25% { transform: translateY(-10px) translateX(5px); }
-  50% { transform: translateY(-5px) translateX(-5px); }
-  75% { transform: translateY(-15px) translateX(3px); }
-  100% { transform: translateY(0px) translateX(0px); }
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px);
+  }
+  50% {
+    transform: translateY(-5px) translateX(-5px);
+  }
+  75% {
+    transform: translateY(-15px) translateX(3px);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
 }
 
 @keyframes text-shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
 }
 
 @keyframes border-dance {
-  0%, 100% { border-color: var(--color-primary); }
-  25% { border-color: var(--color-secondary); }
-  50% { border-color: var(--color-light); }
-  75% { border-color: var(--color-primary); }
+  0%,
+  100% {
+    border-color: var(--color-primary);
+  }
+  25% {
+    border-color: var(--color-secondary);
+  }
+  50% {
+    border-color: var(--color-light);
+  }
+  75% {
+    border-color: var(--color-primary);
+  }
 }
 
 /* Animation Classes */
@@ -164,7 +213,7 @@ pre, code {
 
 .sparkle-effect::before,
 .sparkle-effect::after {
-  content: '✦';
+  content: "✦";
   position: absolute;
   color: var(--color-primary);
   font-size: 0.8rem;
@@ -245,20 +294,46 @@ pre, code {
   will-change: transform;
 }
 
-.floating-element:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
-.floating-element:nth-child(2) { top: 20%; right: 15%; animation-delay: 2s; }
-.floating-element:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 4s; }
-.floating-element:nth-child(4) { bottom: 15%; right: 10%; animation-delay: 6s; }
+.floating-element:nth-child(1) {
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+.floating-element:nth-child(2) {
+  top: 20%;
+  right: 15%;
+  animation-delay: 2s;
+}
+.floating-element:nth-child(3) {
+  bottom: 30%;
+  left: 20%;
+  animation-delay: 4s;
+}
+.floating-element:nth-child(4) {
+  bottom: 15%;
+  right: 10%;
+  animation-delay: 6s;
+}
 
 /* Breathing Effect */
 @keyframes breathe {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 @keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: currentColor; }
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: currentColor;
+  }
 }
 
 .breathe {
@@ -285,5 +360,6 @@ pre, code {
   font-size: 0.75rem;
   line-height: 1.5;
   white-space: pre;
-  font-family: "Courier Prime", "Anonymous Pro", "Ubuntu Mono", "Courier New", "Monaco", monospace;
+  font-family: "Courier Prime", "Anonymous Pro", "Ubuntu Mono", "Courier New",
+    "Monaco", monospace;
 }
